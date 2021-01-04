@@ -96,6 +96,39 @@
   </div>
 
 <script>
+const c = [...document.querySelectorAll('input[type="checkbox"]')]
+
+starter = 0;
+finisher = 0;
+
+for (let i = 0; i < c.length; i++) {
+  c[i].addEventListener('click', function(e) {
+    if (e.shiftKey === true) {
+      finisher = i;
+      if (finisher > starter) {
+        c.slice(starter, finisher).forEach(item => item.checked = true);
+      } else {
+        c.slice(finisher, starter).forEach(item => item.checked = true)
+      }
+    } else {
+      starter = i;
+    }
+  })
+}
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
