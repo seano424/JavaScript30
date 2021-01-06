@@ -7,6 +7,20 @@
 </head>
 <body>
 <script>
+  let array = [];
+  const secretCode = "ocean";
+
+  document.addEventListener('keyup', (e) => {
+    // console.log(e.key);
+    array.push(e.key);
+    // console.log(array);
+    array.splice(-secretCode.length - 1, array.length - secretCode.length)
+    if (array.join("").includes(secretCode)) {
+      console.log("hurray");
+      cornify_add();
+    }
+  })
+
 </script>
 </body>
 </html>
